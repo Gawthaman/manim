@@ -1,4 +1,5 @@
 from manim import *
+import math
 
 class ButterflyUnit(Scene):
     def construct(self):
@@ -96,5 +97,79 @@ class ButterflyUnit(Scene):
         self.play(Create(path_bot_A), Create(path_bot_B), run_time=1.5)
         self.play(Indicate(out_bot_label))
         self.play(FadeOut(path_bot_A), FadeOut(path_bot_B))
+
+        self.wait(2)
+
+class ComplexityComparison(Scene):
+    def construct(self):
+        # 1. Setup White Background
+        self.camera.background_color = WHITE
+        
+        # 2. Create Axes
+        # x_range: [min, max, step], y_range: [min, max, step]
+        # We limit N to 20 because N^2 grows extremely fast (20^2 = 400)
+        axes = Axes(
+            x_range=[0, 25, 5],
+            y_range=[0, 450, 50],
+            axis_config={"color": BLACK, "include_numbers": True},
+            tips=False,
+        ).scale(0.8)
+
+        # Labels for axes
+        x_label = axes.get_x_axis_label("N (Samples)", edge=DOWN, direction=DOWN, buff=0.2).set_color(BLACK)
+        y_label = axes.get_y_axis_label("Operations", edge=LEFT, direction=LEFT, buff=0.2).set_color(BLACK).rotate(PI/2)
+        
+        # 3. Define the Functions
+        # DFT: O(N^2)
+        dft_graph = axes.plot(
+            lambda x: x**2,
+            x_range=[0, 20],
+            color=RED,
+            stroke_width=4
+        )
+        
+        # FFT: O(N log N)
+        # We use log base 2 for accurate complexity representation
+        # Handling x=0 case to avoid math domain error
+        fft_graph = axes.plot(
+            lambda x: x * math.log2(x) if x > 0.1 else 0,
+            x_range=[0, 25],
+            color=BLUE,
+            stroke_width=4
+        )
+
+        # 4. Create Labels for the Lines
+        dft_label = MathTex("DFT: O(N^2)", color=RED).move_to(axes.c2p(15, 350))
+        fft_label = MathTex("FFT: O(N \\log N)", color=BLUE).move_to(axes.c2p(22, 50))
+
+        # 5. Animation Sequence
+        self.play(Create(axes), Write(x_label), Write(y_label), run_time=1.5)
+        
+        # Draw both curves simultaneously to show the race
+        self.play(
+            Create(dft_graph), 
+            Create(fft_graph), 
+            run_time=3
+        )
+        
+        # Label them
+        self.play(Write(dft_label), Write(fft_label))
+        
+        # 6. Emphasize the gap
+        # Draw a vertical line at N=20 to show the massive difference in operations
+        line_at_20 = axes.get_vertical_line(axes.c2p(20, 400), color=BLACK, line_func=DashedLine)
+        
+        # Dots at the intersection of N=20
+        dot_dft = Dot(axes.c2p(20, 400), color=RED)
+        dot_fft = Dot(axes.c2p(20, 20 * math.log2(20)), color=BLUE) # approx 86
+        
+        self.play(Create(line_at_20))
+        self.play(FadeIn(dot_dft), FadeIn(dot_fft))
+        
+        # Add a brace or text to show the savings
+        brace = BraceBetweenPoints(dot_fft.get_center(), dot_dft.get_center(), direction=LEFT, color=BLACK)
+        savings_text = Text("Huge Savings", font_size=24, color=BLACK).next_to(brace, LEFT)
+        
+        self.play(GrowFromCenter(brace), Write(savings_text))
 
         self.wait(2)
