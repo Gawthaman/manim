@@ -1,0 +1,5 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/Gawtham/maniming/manim/testing_manim/media/videos/manim_test/1080p60/partial_movie_files/SineWave5kHz/3529212410_201990305_223132457.mp4'
+file 'file:C:/Users/Gawtham/maniming/manim/testing_manim/media/videos/manim_test/1080p60/partial_movie_files/SineWave5kHz/3040924799_1589455470_3474447299.mp4'
+file 'file:C:/Users/Gawtham/maniming/manim/testing_manim/media/videos/manim_test/1080p60/partial_movie_files/SineWave5kHz/3040924799_638726814_1441473361.mp4'
+file 'file:C:/Users/Gawtham/maniming/manim/testing_manim/media/videos/manim_test/1080p60/partial_movie_files/SineWave5kHz/3040924799_2408024828_274993743.mp4'

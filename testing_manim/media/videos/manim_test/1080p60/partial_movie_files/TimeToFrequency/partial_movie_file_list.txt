@@ -1,0 +1,12 @@
+# This file is used internally by FFMPEG.
+file 'file:C:/Users/Gawtham/maniming/manim/testing_manim/media/videos/manim_test/1080p60/partial_movie_files/TimeToFrequency/2743010386_4206938484_223132457.mp4'
+file 'file:C:/Users/Gawtham/maniming/manim/testing_manim/media/videos/manim_test/1080p60/partial_movie_files/TimeToFrequency/3790338095_1121617232_1494973097.mp4'
+file 'file:C:/Users/Gawtham/maniming/manim/testing_manim/media/videos/manim_test/1080p60/partial_movie_files/TimeToFrequency/3790338095_3691323084_959650090.mp4'
+file 'file:C:/Users/Gawtham/maniming/manim/testing_manim/media/videos/manim_test/1080p60/partial_movie_files/TimeToFrequency/3790338095_235553998_2863535502.mp4'
+file 'file:C:/Users/Gawtham/maniming/manim/testing_manim/media/videos/manim_test/1080p60/partial_movie_files/TimeToFrequency/3790338095_2607744189_2942755478.mp4'
+file 'file:C:/Users/Gawtham/maniming/manim/testing_manim/media/videos/manim_test/1080p60/partial_movie_files/TimeToFrequency/3790338095_2474341789_3244163722.mp4'
+file 'file:C:/Users/Gawtham/maniming/manim/testing_manim/media/videos/manim_test/1080p60/partial_movie_files/TimeToFrequency/3790338095_973062691_763786254.mp4'
+file 'file:C:/Users/Gawtham/maniming/manim/testing_manim/media/videos/manim_test/1080p60/partial_movie_files/TimeToFrequency/3790338095_2513046667_1339481945.mp4'
+file 'file:C:/Users/Gawtham/maniming/manim/testing_manim/media/videos/manim_test/1080p60/partial_movie_files/TimeToFrequency/3790338095_548370141_622560381.mp4'
+file 'file:C:/Users/Gawtham/maniming/manim/testing_manim/media/videos/manim_test/1080p60/partial_movie_files/TimeToFrequency/3790338095_3775587472_484465924.mp4'
+file 'file:C:/Users/Gawtham/maniming/manim/testing_manim/media/videos/manim_test/1080p60/partial_movie_files/TimeToFrequency/3790338095_2005305742_4191123469.mp4'
